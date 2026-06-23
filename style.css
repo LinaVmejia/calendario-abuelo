@@ -1,0 +1,337 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#FFF8F0;
+min-height:100vh;
+padding:30px;
+}
+
+
+
+/* ENCABEZADO */
+
+.hero{
+
+background:linear-gradient(
+90deg,
+#FFF6E8,
+#FFEFD6
+);
+
+padding:40px;
+
+border-radius:30px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+animation:entrada 1s ease;
+
+}
+
+.hero h1{
+
+color:#8A5A44;
+
+font-size:40px;
+
+margin-bottom:10px;
+
+}
+
+.hero p{
+
+color:#666;
+
+font-size:18px;
+
+}
+
+.abuelo{
+
+font-size:120px;
+
+animation:
+flotar 3s infinite ease-in-out;
+
+}
+
+
+
+/* CONTENEDOR */
+
+.contenedor{
+
+display:grid;
+
+grid-template-columns:
+260px 1fr;
+
+gap:30px;
+
+}
+
+
+
+/* MENU */
+
+.menu{
+
+background:white;
+
+padding:25px;
+
+border-radius:30px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+height:fit-content;
+
+}
+
+.menu h3{
+
+color:#7E9B67;
+
+margin-bottom:20px;
+
+}
+
+.menu ul{
+
+list-style:none;
+
+}
+
+.menu li{
+
+padding:14px;
+
+border-radius:15px;
+
+margin-bottom:10px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.menu li:hover{
+
+background:#E7F4E4;
+
+transform:translateX(8px);
+
+}
+
+
+
+/* CONTENIDO */
+
+.contenido{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+
+
+/* MESES */
+
+.mes{
+
+background:white;
+
+padding:25px;
+
+border-radius:30px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.mes h2{
+
+color:#B07B58;
+
+margin-bottom:20px;
+
+}
+
+
+
+/* DIAS */
+
+.dias{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fill,minmax(170px,1fr));
+
+gap:20px;
+
+}
+
+.dia{
+
+background:#FFF6EC;
+
+min-height:180px;
+
+border-radius:20px;
+
+padding:15px;
+
+transition:.4s;
+
+cursor:pointer;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.dia:hover{
+
+transform:
+translateY(-8px);
+
+box-shadow:
+0 10px 20px rgba(0,0,0,.12);
+
+}
+
+.dia span{
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#7A644A;
+
+}
+
+.tarea{
+
+margin-top:20px;
+
+padding:10px;
+
+background:white;
+
+border-radius:15px;
+
+line-height:1.8;
+
+}
+
+
+
+/* ANIMACIONES */
+
+@keyframes flotar{
+
+0%{
+transform:
+translateY(0);
+}
+
+50%{
+transform:
+translateY(-12px);
+}
+
+100%{
+transform:
+translateY(0);
+}
+
+}
+
+@keyframes entrada{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.contenedor{
+
+grid-template-columns:
+1fr;
+
+}
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:20px;
+
+}
+
+}
+
+.mes{
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.5s ease;
+display: none;
+}
+
+.mes.activo{
+opacity: 1;
+transform: translateY(0);
+display: block;
+}
+
+.menu a.seleccionado{
+background:#DCEFD7;
+font-weight:bold;
+transform:translateX(10px);
+}
